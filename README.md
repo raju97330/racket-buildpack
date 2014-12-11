@@ -7,5 +7,5 @@ This expects that you'll have a main.rkt file in your app as the main executable
 ## Usage
 
 ```bash
-cf push racketapp --buildpack=https://github.com/robdaemon/racket-buildpack
+cf push racketapp -b https://github.com/robdaemon/racket-buildpack
 ```

@@ -4,8 +4,8 @@
 # Fail fast and fail hard.
 set -eo pipefail
 
-if [ -z "$BUILDPACK_CACHE" ]; then BUILDPACK_CACHE="/tmp"; fi
-LP_DIR=`cd $(dirname $0); cd ..; pwd`
+#if [ -z "$BUILDPACK_CACHE" ]; then BUILDPACK_CACHE="/tmp"; fi
+#LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
 BUILD_DIR=$1
 CACHE_DIR=$2
