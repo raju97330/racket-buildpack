@@ -25,3 +25,7 @@ echo "-----> Building app"
 cd $BUILD_DIR
 
 raco exe main.rkt
+
+echo "-----> Binary created"  
+
+ls -l /app
