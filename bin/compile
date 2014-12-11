@@ -12,10 +12,10 @@ mkdir -p $CACHE_DIR
 if [ ! -e $CACHE_DIR/racket ]; then
   RACKET_URL="http://mirror.racket-lang.org/installers/6.1.1/racket-6.1.1-x86_64-linux-ubuntu-precise.sh"
   echo "-----> Downloading Racket"
-  curl -# --max-time 120 -L "$RACKET_URL" -o $CACHE_DIR/racket.sh
+  curl --max-time 120 -L "$RACKET_URL" -o $CACHE_DIR/racket.sh
   echo "-----> Installing Racket"  
   mkdir racket
-  sh racket.sh --unix-style --dest $CACHE_DIR/racket/
+  sh $CACHE_DIR/racket.sh --unix-style --dest $CACHE_DIR/racket/
 fi
 
 export PATH=$CACHE_DIR/racket/bin:$PATH
