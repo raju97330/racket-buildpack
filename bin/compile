@@ -4,15 +4,12 @@
 # Fail fast and fail hard.
 set -eo pipefail
 
-#if [ -z "$BUILDPACK_CACHE" ]; then BUILDPACK_CACHE="/tmp"; fi
-#LP_DIR=`cd $(dirname $0); cd ..; pwd`
-
 BUILD_DIR=$1
 CACHE_DIR=$2
 
 mkdir -p $CACHE_DIR
 
-f [ ! -e $CACHE_DIR/racket ]; then
+if [ ! -e $CACHE_DIR/racket ]; then
   RACKET_URL="http://mirror.racket-lang.org/installers/6.1.1/racket-6.1.1-x86_64-linux-ubuntu-precise.sh"
   echo "-----> Downloading Racket"
   curl -# --max-time 120 -L "$RACKET_URL" -o $CACHE_DIR/racket.sh
