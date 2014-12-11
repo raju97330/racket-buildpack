@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo -e "---\ndefault_process_types:\n  web: main"
