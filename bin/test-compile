@@ -1,0 +1,13 @@
+#!/bin/bash
+
+rm -rf /tmp/build
+# git clone -l . /tmp/build
+cp -r . /tmp/build
+
+# comment out this section to reuse the cache
+# rm -rf /tmp/cache
+# mkdir /tmp/cache
+# ln -s /misc/repos/ccl /tmp/cache/ccl
+
+cd /tmp/build
+/source/racket-buildpack/bin/compile /tmp/build /tmp/cache

@@ -9,7 +9,9 @@ CACHE_DIR=$2
 
 mkdir -p $CACHE_DIR
 
-if [ ! -e $CACHE_DIR/racket ]; then
+RACKET_DIR=$CACHE_DIR/racket
+
+if [ ! -d $CACHE_DIR/racket ]; then
   RACKET_URL="http://mirror.racket-lang.org/installers/6.1.1/racket-6.1.1-x86_64-linux-debian-squeeze.sh"
   echo "-----> Downloading Racket"
   curl --max-time 120 -L "$RACKET_URL" -o $CACHE_DIR/racket.sh
@@ -18,6 +20,11 @@ if [ ! -e $CACHE_DIR/racket ]; then
   sh $CACHE_DIR/racket.sh --unix-style --dest $CACHE_DIR/racket/
 fi
 
+echo "Racket installed"
+
+# add to droplet
+cp -r $RACKET_DIR $BUILD_DIR
+
 export PATH=$CACHE_DIR/racket/bin:$PATH
 export LD_LIBRARY_PATH=$CACHE_DIR/racket/lib:$LD_LIBRARY_PATH
 
@@ -25,10 +32,10 @@ echo "-----> Building app"
 
 cd $BUILD_DIR
 
-mkdir -p $BUILD_DIR/bin
-
-raco exe -v -o $BUILD_DIR/bin/main main.rkt
+raco exe -v -o $BUILD_DIR/main main.rkt
 
 echo "-----> Binary created"  
 
-ls -l $BUILD_DIR/bin
+ls -l $BUILD_DIR
+
+echo "-----> Build finished"
