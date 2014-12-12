@@ -19,12 +19,13 @@ if [ ! -e $CACHE_DIR/racket ]; then
 fi
 
 export PATH=$CACHE_DIR/racket/bin:$PATH
+export LD_LIBRARY_PATH=$CACHE_DIR/racket/lib:$LD_LIBRARY_PATH
 
 echo "-----> Building app"  
 
 cd $BUILD_DIR
 
-raco exe main.rkt
+raco exe -vv -o main main.rkt
 
 echo "-----> Binary created"  
 
