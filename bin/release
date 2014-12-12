@@ -1,3 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# bin/release <build-dir>
 
-echo -e "---\ndefault_process_types:\n\tweb: main"
+# Writes an empty release - use your Procfile instead.
+
+echo -e "--- {}"
