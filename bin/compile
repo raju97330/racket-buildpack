@@ -28,4 +28,4 @@ raco exe main.rkt
 
 echo "-----> Binary created"  
 
-ls -l /app
+ls -l $BUILD_DIR
