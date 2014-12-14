@@ -32,7 +32,7 @@ echo "-----> Building app"
 
 cd $BUILD_DIR
 
-raco exe -v -o $BUILD_DIR/main main.rkt
+# raco exe -v -o $BUILD_DIR/main main.rkt
 
 echo "-----> Binary created"  
 
