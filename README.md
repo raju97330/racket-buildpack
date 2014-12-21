@@ -31,3 +31,7 @@ variables, etc) but the main executable is always named `main` from this build p
 ## Example
 
 You can find an example app using this build pack at: https://github.com/robdaemon/cf-racket-hello
+
+## License
+
+This is released under the terms of the Apache Public License 2.0.
