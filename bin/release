@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
-# Writes an empty release - use your Procfile instead.
+# Writes a default start command, but you should use a Procfile or manifest
+# to override where necessary.
 
-echo -e "--- {}"
+echo -e "---\ndefault_process_type:\n  web: ./racketapp/bin/main"
